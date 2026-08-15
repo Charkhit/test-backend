@@ -1,0 +1,19 @@
+# Backend
+backend/.env
+backend/.env.*
+!backend/.env.example
+backend/*.exe
+backend/vendor/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# General
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/git config --global user.name "Chakhit" git config --global user.email "chakit1412@gmail.com"
