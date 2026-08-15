@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15.18-alpine3.24
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: P@ssw9rd
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
