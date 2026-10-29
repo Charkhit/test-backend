@@ -3,16 +3,14 @@ package main
 import (
 	"net/http"
 
-	"github.com/yourname/backend/config"
-	"github.com/yourname/backend/database"
-	"github.com/yourname/backend/routes"
+	"github.com/chakhit/backend/config"
+	"github.com/chakhit/backend/routes"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	cfg := config.LoadConfig()
-	database.Connect(cfg)
 
 	r := gin.Default()
 	r.GET("/health", func(c *gin.Context) {

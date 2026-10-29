@@ -1,17 +1,16 @@
 version: '3.8'
 services:
   db:
-    image: postgres:15.18-alpine3.24
-    container_name: postgres_db
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    container_name: sqlserver
     restart: always
     environment:
-      POSTGRES_USER: devuser
-      POSTGRES_PASSWORD: P@ssw9rd
-      POSTGRES_DB: testdb
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${DB_PASSWORD}"
     ports:
-      - "5432:5432"
+      - "1433:1433"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - sqlserver_data:/var/opt/mssql
 
 volumes:
-  pgdata:
+  sqlserver_data:
